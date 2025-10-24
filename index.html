@@ -12,7 +12,19 @@
     />
     <link rel="icon" type="image/svg+xml" href="/src/assets/svg/favicon.svg" />
     <link rel="shortcut icon" href="/src/assets/svg/favicon.ico" />
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
   </head>
+  <!-- Alpine Plugins -->
+  <script
+    defer
+    src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"
+  ></script>
+
+  <!-- Alpine Core -->
   <script
     defer
     src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -358,7 +370,11 @@
           <img
             src="/src/assets/img/hero-img-bg-neutral-50.jpg"
             alt="A professional photo of a man smiling"
-            class="h-auto w-full rounded-xl object-cover sm:w-3/4 md:w-2/3 lg:w-full"
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="h-auto w-full rounded-xl object-cover sm:w-3/4 md:w-2/3 lg:w-full transition duration-1000 ease-out"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
           />
         </div>
       </div>
@@ -373,6 +389,11 @@
             <img
               src="/src/assets/img/about-img-outline.png"
               alt="A man working on a laptop"
+              x-data="{ shown: false }"
+              x-intersect.once.threshold.3="shown = true"
+              x-cloak
+              class="transition duration-1000 ease-out"
+              :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
             />
           </div>
           <div class="text-center text-white md:w-1/2 md:text-left">
@@ -436,7 +457,11 @@
           <!--CARD 1-->
 
           <div
-            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg"
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg transition duration-1000 ease-out"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
           >
             <div class="mb-4 text-center">
               <svg
@@ -468,7 +493,11 @@
           <!--CARD 2-->
 
           <div
-            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg"
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg transition duration-1000 ease-out delay-300"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
           >
             <div class="mb-4 text-center">
               <svg
@@ -500,7 +529,11 @@
           <!--CARD 3-->
 
           <div
-            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg"
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="transform rounded-lg border-3 border-[#546965] bg-neutral-100 p-8 shadow-lg transition duration-1000 ease-out delay-600"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
           >
             <div class="mb-4 text-center">
               <svg
@@ -547,10 +580,16 @@
           </p>
         </div>
 
-        <!-- Project 1 -->
-
         <div class="-m-5 flex flex-wrap justify-center">
-          <div class="w-full p-5 sm:w-1/2 lg:w-1/3">
+          <!-- Project 1 -->
+
+          <div
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="w-full p-5 sm:w-1/2 lg:w-1/3 transition duration-1000 ease-out"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
+          >
             <div
               class="transform overflow-hidden rounded-xl bg-white shadow-lg transition duration-300 ease-in-out hover:scale-105 h-full"
             >
@@ -584,7 +623,13 @@
 
           <!-- Project 2 -->
 
-          <div class="w-full p-5 sm:w-1/2 lg:w-1/3">
+          <div
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="w-full p-5 sm:w-1/2 lg:w-1/3 transition duration-1000 ease-out delay-300"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
+          >
             <div
               class="transform overflow-hidden rounded-xl bg-white shadow-lg transition duration-300 ease-in-out hover:scale-105 h-full flex flex-col"
             >
@@ -617,7 +662,13 @@
 
           <!-- Project 3 -->
 
-          <div class="w-full p-5 sm:w-1/2 lg:w-1/3">
+          <div
+            x-data="{ shown: false }"
+            x-intersect.once.threshold.3="shown = true"
+            x-cloak
+            class="w-full p-5 sm:w-1/2 lg:w-1/3 transition duration-1000 ease-out delay-600"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
+          >
             <div
               class="transform overflow-hidden rounded-xl bg-white shadow-lg transition duration-300 ease-in-out hover:scale-105 h-full flex flex-col"
             >
@@ -684,20 +735,32 @@
           <div class="space-y-4">
             <img
               src="/src/assets/img/desert.jpg"
-              class="w-full rounded-xl object-cover shadow-lg"
               alt="A man sitting on a sand dune overlooking a sunset"
+              x-data="{ shown: false }"
+              x-intersect.once.threshold.3="shown = true"
+              x-cloak
+              class="w-full rounded-xl object-cover shadow-lg transition duration-1000 ease-out"
+              :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
             />
             <img
               src="/src/assets/img/boat.jpg"
-              class="w-full rounded-xl object-cover shadow-lg"
               alt="A man standing infront of a traditional style boat"
+              x-data="{ shown: false }"
+              x-intersect.once.threshold.3="shown = true"
+              x-cloak
+              class="w-full rounded-xl object-cover shadow-lg transition duration-1000 ease-out delay-300"
+              :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
             />
           </div>
           <div class="mt-10 space-y-4">
             <img
               src="/src/assets/img/europe.jpeg"
-              class="w-full rounded-xl object-cover shadow-lg"
               alt="A man sitting on a ledge overlooking a European city along a river"
+              x-data="{ shown: false }"
+              x-intersect.once.threshold.3="shown = true"
+              x-cloak
+              class="w-full rounded-xl object-cover shadow-lg transition duration-1000 ease-out delay-600"
+              :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'"
             />
           </div>
         </div>
